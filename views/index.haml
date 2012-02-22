@@ -1,0 +1,10 @@
+%div
+  %img{:src => './images/prosciutto.jpg'}
+- d = Date.today
+- friday = (d..(d+7)).find{|d| d.cwday == 5}
+- month = friday.strftime("%m")
+- day = friday.strftime("%d")
+- year = friday.strftime("%Y")
+#hidden_values{:type => 'hidden', :'data-month' => month, :'data-day' => day, :'data-year' => year, :style => 'display:none;'}
+
+#display
