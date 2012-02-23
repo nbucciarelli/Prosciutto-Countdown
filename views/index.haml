@@ -1,5 +1,8 @@
-%div
-  %img{:src => './images/prosciutto.jpg'}
+%div{ :style => "height: 240px;" }
+  %div{:style => "position: absolute; z-index:100"}
+    %img{:src => './images/prosciutto.jpg'}
+  %div#fireworks{:style => "position: absolute; z-index:1000; display: none;"}
+    %img{:src => './images/fireworks.gif'}
 - d = Date.today
 - friday = (d..(d+7)).find{|d| d.cwday == 5}
 - month = friday.strftime("%m")
