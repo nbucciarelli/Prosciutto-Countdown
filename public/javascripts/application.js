@@ -8,7 +8,7 @@ $(document).ready(function() {
   var today=new Date()
   var todayy=today.getYear()
   if (todayy < 1000)
-  todayy+=1900
+    todayy+=1900
   var todaym=today.getMonth()
   var todayd=today.getDate()
   var todayh=today.getHours()
@@ -21,18 +21,27 @@ $(document).ready(function() {
   dhour=Math.floor((dd%(60*60*1000*24))/(60*60*1000)*1)
   dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1)
   dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1)
+
   if(dday==0&&dhour==0&&dmin==0&&dsec==1){
+    $('#fireworks').toggle();
     return "ZOMG" // document.forms.count.count2.value=current
   }
   else
-  return (dday+ " days "+dhour+" hours "+dmin+" minutes and "+dsec+" seconds left until prosciutto.")
+    return (dday+ " days "+dhour+" hours "+dmin+" minutes and "+dsec+" seconds left until prosciutto.")
   }
+
+  function tick(year, month, day){
+    $("#display").html(countdown(year,month,day));
+    window.setTimeout( function(){
+      tick(year, month, day);
+    }, 1000);
+  }
+
   //enter the count down date using the format year/month/day
   var month = $("#hidden_values").data('month');
   console.log(month);
   var day = $("#hidden_values").data('day');
   var year = $("#hidden_values").data('year');
-  $("#display").html(countdown(year,month,day))
+  tick(year, month, day);
 
 });
-//change the text below to reflect your own,
