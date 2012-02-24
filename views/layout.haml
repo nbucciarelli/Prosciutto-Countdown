@@ -3,6 +3,19 @@
   %head
     %title= @title
     %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
+    - d = Date.today
+    - friday = (d..(d+7)).find{|d| d.cwday == 5}
+
+    #hidden_values{:type => 'hidden', :'data-goal_date' => friday.strftime("%m/%d/%Y"), :style => 'display:none;'}
     %script{:src => "javascripts/application.js"}
+    %script{:src => "javascripts/countdown.js"}
     %link{:type => "text/css", :rel => "stylesheet", :media => "screen", :href => "stylesheets/application.css"}
   %body= yield
+
+:javascript
+  var goal_date = $("#hidden_values").data('goal_date');
+  var cd1 = new countdown('cd1');
+  cd1.Div = "display";
+  cd1.TargetDate = goal_date + " 11:30 AM";
+  cd1.DisplayFormat = "%%D%% days, %%H%% hours, %%M%% minutes, %%S%% seconds";
+  cd1.Setup();

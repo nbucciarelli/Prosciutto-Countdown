@@ -1,47 +1,58 @@
 $(document).ready(function() {
-  var before="prosciutto."
-  var current="Today is prosciutto!"
-  var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+  // var before="prosciutto."
+  // var current="Today is prosciutto!"
+  // var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+  //
+  // function countdown(yr,m,d){
+  // theyear=yr;themonth=m;theday=d
+  // var today=new Date()
+  // var todayy=today.getYear()
+  // if (todayy < 1000)
+  //   todayy+=1900
+  // var todaym=today.getMonth()
+  // var todayd=today.getDate()
+  // var todayh=today.getHours()
+  // var todaymin=today.getMinutes()
+  // var todaysec=today.getSeconds()
+  // var todaystring=montharray[todaym]+" "+todayd+", "+todayy+" "+todayh+":"+todaymin+":"+todaysec
+  // futurestring=montharray[m-1]+" "+d+", "+yr
+  //
+  // dd=Date.parse(futurestring)-Date.parse(todaystring)
+  // dday=Math.floor(dd/(60*60*1000*24)*1)
+  // dhour=Math.floor((dd%(60*60*1000*24))/(60*60*1000)*1)
+  // dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1)
+  // dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1)
+  //
+  // if(dday<0&&dhour<0&&dmin<0&&dsec<0){
+  //   $('#fireworks').toggle();
+  //   return "ZOMG LET'S GO EAT!" // document.forms.count.count2.value=current
+  // }
+  // else
+  //   return (dday+ " days "+dhour+" hours "+dmin+" minutes and "+dsec+" seconds left until prosciutto.")
+  // }
+  //
+  // function tick(year, month, day){
+  //   $("#display").html(countdown(year,month,day));
+  //   window.setTimeout( function(){
+  //     tick(year, month, day);
+  //   }, 1000);
+  // }
+  //
+  // //enter the count down date using the format year/month/day
+  // var month = $("#hidden_values").data('month');
+  // var day = $("#hidden_values").data('day');
+  // var year = $("#hidden_values").data('year');
+  // tick(year, month, day);
 
-  function countdown(yr,m,d){
-  theyear=yr;themonth=m;theday=d
-  var today=new Date()
-  var todayy=today.getYear()
-  if (todayy < 1000)
-    todayy+=1900
-  var todaym=today.getMonth()
-  var todayd=today.getDate()
-  var todayh=today.getHours()
-  var todaymin=today.getMinutes()
-  var todaysec=today.getSeconds()
-  var todaystring=montharray[todaym]+" "+todayd+", "+todayy+" "+todayh+":"+todaymin+":"+todaysec
-  futurestring=montharray[m-1]+" "+d+", "+yr
-  dd=Date.parse(futurestring)-Date.parse(todaystring)
-  dday=Math.floor(dd/(60*60*1000*24)*1)
-  dhour=Math.floor((dd%(60*60*1000*24))/(60*60*1000)*1)
-  dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1)
-  dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1)
-
-  if(dday<0&&dhour<0&&dmin<0&&dsec<0){
-    $('#fireworks').toggle();
-    return "ZOMG LET'S GO EAT!" // document.forms.count.count2.value=current
-  }
-  else
-    return (dday+ " days "+dhour+" hours "+dmin+" minutes and "+dsec+" seconds left until prosciutto.")
-  }
-
-  function tick(year, month, day){
-    $("#display").html(countdown(year,month,day));
-    window.setTimeout( function(){
-      tick(year, month, day);
-    }, 1000);
-  }
-
-  //enter the count down date using the format year/month/day
-  var month = $("#hidden_values").data('month');
-  console.log(month);
-  var day = $("#hidden_values").data('day');
-  var year = $("#hidden_values").data('year');
-  tick(year, month, day);
+  // var goal_date = $("#hidden_values").data('goal_date');
+  // TargetDate = goal_date + " 12:30 PM";
+  // console.log(TargetDate)
+  // BackColor = "palegreen";
+  // ForeColor = "navy";
+  // CountActive = true;
+  // CountStepper = -1;
+  // LeadingZero = true;
+  // DisplayFormat = "%%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
+  // FinishMessage = "ZOMG LET'S EAT!!";
 
 });
