@@ -22,9 +22,9 @@ $(document).ready(function() {
   dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1)
   dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1)
 
-  if(dday==0&&dhour==0&&dmin==0&&dsec==1){
+  if(dday<0&&dhour<0&&dmin<0&&dsec<0){
     $('#fireworks').toggle();
-    return "ZOMG" // document.forms.count.count2.value=current
+    return "ZOMG LET'S GO EAT!" // document.forms.count.count2.value=current
   }
   else
     return (dday+ " days "+dhour+" hours "+dmin+" minutes and "+dsec+" seconds left until prosciutto.")

@@ -1,13 +1,14 @@
-%div{ :style => "height: 240px;" }
-  %div{:style => "position: absolute; z-index:100"}
-    %img{:src => './images/prosciutto.jpg'}
-  %div#fireworks{:style => "position: absolute; z-index:1000; display: none;"}
-    %img{:src => './images/fireworks.gif'}
-- d = Date.today
-- friday = (d..(d+7)).find{|d| d.cwday == 5}
-- month = friday.strftime("%m")
-- day = friday.strftime("%d")
-- year = friday.strftime("%Y")
-#hidden_values{:type => 'hidden', :'data-month' => month, :'data-day' => day, :'data-year' => year, :style => 'display:none;'}
+%center
+  %div{ :style => "height: 240px;" }
+    %div{:style => "z-index:100"}
+      %img{:src => './images/prosciutto.jpg'}
+    %div#fireworks{:style => "margin-top:-210px;z-index:1000; display: none;"}
+      %img{:src => './images/fireworks.gif'}
+  - d = Date.today
+  - friday = (d..(d+7)).find{|d| d.cwday == 5}
+  - month = friday.strftime("%m")
+  - day = friday.strftime("%d")
+  - year = friday.strftime("%Y")
+  #hidden_values{:type => 'hidden', :'data-month' => month, :'data-day' => day, :'data-year' => year, :style => 'display:none;'}
 
-#display
+  #display
